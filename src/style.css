@@ -1,0 +1,22 @@
+body{
+    background-color: black;
+}
+
+header{ 
+    color: bisque;
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+    font-size: 5rem;
+    color: white;
+}
+
+header > img {
+    width: 5rem;
+    height: auto;
+}
+
+.sidebar{
+    background-color: bisque;
+    color: white;
+}
