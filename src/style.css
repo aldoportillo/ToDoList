@@ -40,3 +40,17 @@ header > img {
 .projects-title{
     grid-column: 1/4;
 }
+
+
+.grid-container{
+    display: grid;
+    grid-template-columns: 1fr;
+    color: black;
+}
+
+.list-item{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    background-color: antiquewhite;
+}
