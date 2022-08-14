@@ -54,3 +54,16 @@ header > img {
     align-items: center;
     background-color: antiquewhite;
 }
+
+.circle {
+    position: fixed;
+    bottom:5%;
+    right: 10%; 
+    background-color: bisque;
+    border-radius: 250px;
+    height: 100px;
+    width: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
