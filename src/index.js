@@ -8,14 +8,12 @@ blankProjectLoad();
 
 initDomManipulation();
 
-let toDoTable = [];
+createToDo("Homework", "To do list", "08/20/22", "low", "false");
 
-const firstItem = createToDo("Homework", "To do list", "08/20/22", "low", "false");
-toDoTable.push(firstItem);
-const secondItem = createToDo("Work", "Bartend", "Today", "Urgent", "false");
-toDoTable.push(secondItem);
-const thirdItem = createToDo("Train", "MMA", "Tomorrow", "Top Priority", "false")
-toDoTable.push(thirdItem);
-console.log(firstItem)
-console.log(firstItem.Title)
-console.table(toDoTable)
+createToDo("Work", "Bartend", "Today", "Urgent", "false");
+
+createToDo("Train", "MMA", "Tomorrow", "Top Priority", "false")
+ 
+
+//Proved that my createToDO function returns objects using console.table on an array of toDos
+//Rework toDO to create this function and be able to update it per request. 
