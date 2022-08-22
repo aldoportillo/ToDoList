@@ -17,3 +17,7 @@ createToDo("Train", "MMA", "Tomorrow", "Top Priority", "false")
 
 //Proved that my createToDO function returns objects using console.table on an array of toDos
 //Rework toDO to create this function and be able to update it per request. 
+
+import { renderForm } from './form';
+
+renderForm();
