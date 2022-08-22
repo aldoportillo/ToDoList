@@ -7,7 +7,7 @@ header{
     display: flex;
     align-items: center;
     gap: 2rem;
-    font-size: 5rem;
+    font-size: 2rem;
     color: white;
 }
 
@@ -66,4 +66,13 @@ header > img {
     display: flex;
     justify-content: center;
     align-items: center;
+}
+
+form {
+    background-color: aquamarine;
+    display: flex;
+    flex-direction: column ;
+    justify-content: center;
+    align-items: center;
+    width: 200px;
 }
