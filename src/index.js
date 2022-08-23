@@ -51,7 +51,7 @@ const modal = document.getElementById("myModal");
   console.log("Am I in watchmode? Yes")
 
 const cardContainer = document.createElement("div");
-cardContainer.classList.add("cardContainer");
+cardContainer.classList.add("card-container");
 
 
 
@@ -60,6 +60,23 @@ cardContainer.classList.add("cardContainer");
 const card = document.createElement("div");
 card.classList.add("card");
 
+const title = document.createElement("h2");
+title.textContent = "Homework"
+
+const description = document.createElement("p")
+description.textContent = "ipsum lorem impsum lore ipsum lorem ipsum lorem ipsum lorem ipsum lorem"
+
+
+const dueDate = document.createElement("p");
+dueDate.textContent = "Tomrrow!";
+
+const priority = document.createElement("p");
+priority.textContent = "high"
+
+const checkList = document.createElement("p");
+checkList.textContent = "true";
+
+card.append(title, description, dueDate, priority, checkList)
 cardContainer.appendChild(card)
 
 
