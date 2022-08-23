@@ -57,10 +57,19 @@ cardContainer.setAttribute("id", "cardContainer")
 
 import {createCard} from './createCards';
 
-const card1 = createCard("Homework", "ipsum lorem impsum lore ipsum lorem ipsum lorem ipsum lorem ipsum lorem", "Tomrrow!", "high", "true");
 
-cardContainer.appendChild(card1)
+cardContainer.appendChild(createCard("Homework", "ipsum lorem impsum lore ipsum lorem ipsum lorem ipsum lorem ipsum lorem", "Tomrrow!", "high", "true"));
 
+const submitButton = document.getElementById('submit');
+
+submitButton.addEventListener('click', () => {
+        
+  createToDo(document.querySelector("#title").value, document.querySelector('#description').value, document.querySelector('#dueDate').value, document.querySelector('#priority').value, document.querySelector('#checkList').value )
+  console.log("Submit from index.js");
+  //createCard(document.querySelector("#title").value, document.querySelector('#description').value, document.querySelector('#dueDate').value, document.querySelector('#priority').value, document.querySelector('#checkList').value)
+  cardContainer.appendChild(createCard(document.querySelector("#title").value, document.querySelector('#description').value, document.querySelector('#dueDate').value, document.querySelector('#priority').value, document.querySelector('#checkList').value))
+  
+})
 
 
 content.appendChild(cardContainer);
