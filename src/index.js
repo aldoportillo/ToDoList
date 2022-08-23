@@ -45,3 +45,22 @@ const modal = document.getElementById("myModal");
   btnNew.onclick = function() {
     modal.style.display = "block";
   }
+
+  //Try to make container div with cards and styling inputs
+
+  console.log("Am I in watchmode? Yes")
+
+const cardContainer = document.createElement("div");
+cardContainer.classList.add("cardContainer");
+
+
+
+//New function that will create these and append them to card container
+
+const card = document.createElement("div");
+card.classList.add("card");
+
+cardContainer.appendChild(card)
+
+
+content.appendChild(cardContainer);
