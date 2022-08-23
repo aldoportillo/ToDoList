@@ -1,12 +1,23 @@
 import './style.css';
 import {blankProjectLoad} from './blankProjectLoad.js';
-import {initDomManipulation} from './initDomManipulation';
-
 import {createToDo} from './createToDO'
 
-blankProjectLoad();
+    const content = document.createElement("div");
+    content.classList.add("content");
+    content.setAttribute("id", "content")
 
-initDomManipulation();
+    const header = document.createElement("header");
+    const headerText = document.createElement("h1");
+    headerText.textContent = "To Do List";
+    header.appendChild(headerText);
+    content.appendChild(header);
+
+    const projectsInfo = document.createElement("div");
+    projectsInfo.textContent = blankProjectLoad().projectTitle;
+    content.appendChild(projectsInfo);
+
+    document.body.appendChild(content)
+
 
 createToDo("Homework", "To do list", "08/20/22", "low", "false");
 
@@ -21,3 +32,16 @@ createToDo("Train", "MMA", "Tomorrow", "Top Priority", "false")
 import { renderForm } from './form';
 
 renderForm();
+
+const btnNew = document.createElement("button");
+btnNew.textContent = "Add new task"
+
+document.body.appendChild(btnNew)
+//Opens modal
+const modal = document.getElementById("myModal");
+  
+ // const span = document.getElementsByClassName("close")[0];
+  
+  btnNew.onclick = function() {
+    modal.style.display = "block";
+  }
