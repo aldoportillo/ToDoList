@@ -52,32 +52,15 @@ const modal = document.getElementById("myModal");
 
 const cardContainer = document.createElement("div");
 cardContainer.classList.add("card-container");
+cardContainer.setAttribute("id", "cardContainer")
 
 
+import {createCard} from './createCards';
 
-//New function that will create these and append them to card container
+const card1 = createCard("Homework", "ipsum lorem impsum lore ipsum lorem ipsum lorem ipsum lorem ipsum lorem", "Tomrrow!", "high", "true");
 
-const card = document.createElement("div");
-card.classList.add("card");
+cardContainer.appendChild(card1)
 
-const title = document.createElement("h2");
-title.textContent = "Homework"
-
-const description = document.createElement("p")
-description.textContent = "ipsum lorem impsum lore ipsum lorem ipsum lorem ipsum lorem ipsum lorem"
-
-
-const dueDate = document.createElement("p");
-dueDate.textContent = "Tomrrow!";
-
-const priority = document.createElement("p");
-priority.textContent = "high"
-
-const checkList = document.createElement("p");
-checkList.textContent = "true";
-
-card.append(title, description, dueDate, priority, checkList)
-cardContainer.appendChild(card)
 
 
 content.appendChild(cardContainer);
