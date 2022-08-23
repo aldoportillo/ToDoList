@@ -1,4 +1,3 @@
-import { createToDo } from "./createToDO";
 
 export const renderForm = () => {
     const content = document.getElementById("content")
@@ -34,21 +33,27 @@ export const renderForm = () => {
 
     //Add submit button
     const submit = document.createElement("button");
-    //submit.setAttribute("type", "submit");
-    //submit.setAttribute("id", "submit")
+    submit.setAttribute("type", "submit");
+    submit.setAttribute("id", "submit")
     submit.textContent = "Add Task";
 
-    submit.addEventListener('click', () => {
+    
+    // submit.addEventListener('click', () => {
         
-        createToDo(document.querySelector("#title").value, document.querySelector('#description').value, document.querySelector('#dueDate').value, document.querySelector('#priority').value, document.querySelector('#checkList').value )
-        console.log("Submit from form.js");
-    });
+    //     createToDo(document.querySelector("#title").value, document.querySelector('#description').value, document.querySelector('#dueDate').value, document.querySelector('#priority').value, document.querySelector('#checkList').value )
+    //     console.log("Submit from form.js");
+    //     createCard(document.querySelector("#title").value, document.querySelector('#description').value, document.querySelector('#dueDate').value, document.querySelector('#priority').value, document.querySelector('#checkList').value)
+    //     //cardContainer.appendChild(createCard("Homework", "ipsum lorem impsum lore ipsum lorem ipsum lorem ipsum lorem ipsum lorem", "Tomrrow!", "high", "true"))
+
+    // });
 
     modal.appendChild(submit);
 
 
     
     content.appendChild(modal)
+
+    return content
 }
 
 
