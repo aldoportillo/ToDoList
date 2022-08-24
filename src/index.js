@@ -19,11 +19,6 @@ import {createToDo} from './createToDO'
     document.body.appendChild(content)
 
 
-createToDo("Homework", "To do list", "08/20/22", "low", "false");
-
-createToDo("Work", "Bartend", "Today", "Urgent", "false");
-
-createToDo("Train", "MMA", "Tomorrow", "Top Priority", "false")
  
 
 //Proved that my createToDO function returns objects using console.table on an array of toDos
@@ -64,10 +59,14 @@ const submitButton = document.getElementById('submit');
 
 submitButton.addEventListener('click', () => {
         
-  createToDo(document.querySelector("#title").value, document.querySelector('#description').value, document.querySelector('#dueDate').value, document.querySelector('#priority').value, document.querySelector('#checkList').value )
-  console.log("Submit from index.js");
-  //createCard(document.querySelector("#title").value, document.querySelector('#description').value, document.querySelector('#dueDate').value, document.querySelector('#priority').value, document.querySelector('#checkList').value)
-  cardContainer.appendChild(createCard(document.querySelector("#title").value, document.querySelector('#description').value, document.querySelector('#dueDate').value, document.querySelector('#priority').value, document.querySelector('#checkList').value))
+  let array = createToDo(document.querySelector("#title").value, document.querySelector('#description').value, document.querySelector('#dueDate').value, document.querySelector('#priority').value, document.querySelector('#checkList').value )
+  console.log(`Look at this object array ${array}`);
+  
+  for (let i = 0; i < array.length; i++){
+    cardContainer.appendChild(createCard(document.querySelector("#title").value, document.querySelector('#description').value, document.querySelector('#dueDate').value, document.querySelector('#priority').value, document.querySelector('#checkList').value))
+  }
+
+  //cardContainer.appendChild(createCard(document.querySelector("#title").value, document.querySelector('#description').value, document.querySelector('#dueDate').value, document.querySelector('#priority').value, document.querySelector('#checkList').value))
   
 })
 
