@@ -1,74 +1,53 @@
-import './style.css';
-import {blankProjectLoad} from './blankProjectLoad.js';
-import {createToDo} from './createToDO'
+const header = document.createElement('header')
+const title = document.createElement('h1');
+title.textContent = "TO DO LIST"
+header.appendChild(title);
+const newButton = document.createElement('button')
+newButton.textContent = "New To Do"
+header.appendChild(newButton);
+document.body.appendChild(header)
 
-    const content = document.createElement("div");
-    content.classList.add("content");
-    content.setAttribute("id", "content")
-
-    const header = document.createElement("header");
-    const headerText = document.createElement("h1");
-    headerText.textContent = "To Do List";
-    header.appendChild(headerText);
-    content.appendChild(header);
-
-    const projectsInfo = document.createElement("div");
-    projectsInfo.textContent = blankProjectLoad().projectTitle;
-    content.appendChild(projectsInfo);
-
-    document.body.appendChild(content)
+const cardContainer = document.createElement('div');
+cardContainer.classList.add('card-container');
 
 
- 
+    class Card {
+        constructor(taskInput, dateInput) {
+            this.taskInput = taskInput;
+            this.dateInput = dateInput;
+        }
+        createDOM() {
+            const close = document.createElement('span');
+            close.textContent = "x"
+            close.classList.add('close')
+            close.addEventListener('click', () => {
+                console.log("hello world")
+                close.parentElement.remove();
+            });
+            const card = document.createElement('div')
+            card.classList.add('card1')
 
-//Proved that my createToDO function returns objects using console.table on an array of toDos
-//Rework toDO to create this function and be able to update it per request. 
+            const task = document.createElement('h3')
+            task.textContent = this.taskInput
+            const date = document.createElement('h3')
+            date.textContent = this.dateInput
 
-import { renderForm } from './form';
+            card.append(close, task, date)
 
-renderForm();
+            cardContainer.appendChild(card);
+        }
 
-const btnNew = document.createElement("button");
-btnNew.textContent = "Add new task"
-
-document.body.appendChild(btnNew)
-//Opens modal
-const modal = document.getElementById("myModal");
-  
- // const span = document.getElementsByClassName("close")[0];
-  
-  btnNew.onclick = function() {
-    modal.style.display = "block";
-  }
-
-  //Try to make container div with cards and styling inputs
-
-  console.log("Am I in watchmode? Yes")
-
-const cardContainer = document.createElement("div");
-cardContainer.classList.add("card-container");
-cardContainer.setAttribute("id", "cardContainer")
+    }
 
 
-import {createCard} from './createCards';
+document.body.appendChild(cardContainer);
 
+let card1 = new Card("CODE", "TOMORROW")
+let card2 = new Card("WORK", "WEDNESDAY")
 
-cardContainer.appendChild(createCard("Homework", "ipsum lorem impsum lore ipsum lorem ipsum lorem ipsum lorem ipsum lorem", "Tomrrow!", "high", "true"));
+card1.createDOM()
+card2.createDOM()
 
-const submitButton = document.getElementById('submit');
-
-submitButton.addEventListener('click', () => {
-        
-  let array = createToDo(document.querySelector("#title").value, document.querySelector('#description').value, document.querySelector('#dueDate').value, document.querySelector('#priority').value, document.querySelector('#checkList').value )
-  console.log(`Look at this object array ${array}`);
-  
-  for (let i = 0; i < array.length; i++){
-    cardContainer.appendChild(createCard(document.querySelector("#title").value, document.querySelector('#description').value, document.querySelector('#dueDate').value, document.querySelector('#priority').value, document.querySelector('#checkList').value))
-  }
-
-  //cardContainer.appendChild(createCard(document.querySelector("#title").value, document.querySelector('#description').value, document.querySelector('#dueDate').value, document.querySelector('#priority').value, document.querySelector('#checkList').value))
-  
+newButton.addEventListener('click', () => {
+    card2.createDOM()
 })
-
-
-content.appendChild(cardContainer);
