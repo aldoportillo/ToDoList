@@ -11,19 +11,9 @@ const sidebar = document.createElement('div');
 sidebar.classList.add('sidebar');
 const listsContainer = document.createElement('div');
 listsContainer.classList.add('lists-conatiner')
-sidebar.appendChild(listsContainer)
 
-let lists = [
-    {
-        id: 1, 
-        name: 'homework', 
-    }, {
-        id: 2,
-        name: 'job work',
-    }, {
-        id: 3,
-        name: 'tqchniques',
-    }];
+
+let lists = [];
 
 function render() {
     clearElement(listsContainer)
@@ -31,7 +21,7 @@ function render() {
     lists.forEach(list => {
         const listElement = document.createElement('li');
         listElement.classList.add("list-name")
-        listElement.dataset.listID = lists.id;
+        listElement.classList.listId = lists.id;
         listElement.innerText = list.name;
         listsContainer.appendChild(listElement)
     })
@@ -42,11 +32,34 @@ const clearElement = (element) => {
         element.removeChild.firstChild
     }
 }
-render()
+//render()
 
+//form
+const newListForm = document.createElement('form');
+newListForm.setAttribute("data-new-list-form", "")
+const newListInput = document.createElement('input');
+newListInput.setAttribute("type", "text");
+newListInput.setAttribute("data-new-list-input", "")
+const submitButton = document.createElement('button')
+newListForm.append(newListInput, submitButton);
+
+sidebar.appendChild(listsContainer)
+sidebar.appendChild(newListForm);
 document.body.appendChild(sidebar)
 
+newListForm.addEventListener('submit', e => {
+    e.preventDefault();
+    const listName = newListInput.value;
+    if (listName) {
+        const list = createList(listName)
+        newListInput.value = null
+        lists.push(list)
+        render()}
+})
 
+const createList = (names) => {
+    return {id: Date.now().toString(), name: names, tasks: []}
+}
 //All Card Container work
 const cardContainer = document.createElement('div');
 cardContainer.classList.add('card-container');
